@@ -22,7 +22,7 @@ Route::get('contact','UsersController@contact')->name('contact');
 // お問い合わせフォーム
 Route::post('contact/create','ContactsController@create')->name('contact.create');
 // メール送信(仮)
-Route::post('contact','MailsCOntroller@send')->name('send');
+Route::post('contact','ContactsController@send')->name('send');
 
 // ログイン
 Auth::routes();

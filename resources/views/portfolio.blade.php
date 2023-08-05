@@ -5,12 +5,12 @@
 <div class="body">
   <div class="article">
     <div>
-      <img src="storage/{{ $user->background }}" alt="トップ写真" class="topPic">
+      <img src="{{ asset('storage/'.$user->background) }}" alt="トップ写真" class="topPic">
     </div>
     <div class="introduce">
       <h2>About</h2>
       <div class="introduceContents">
-        <img src="storage/{{ $user->image }}" alt="" class="profileImage">
+        <img src="{{ asset('storage/'.$user->image) }}" alt="" class="profileImage">
         <div class="introduceText">
           <p>NAME: <strong>{{ $user->name }}</strong></p>
           <p>{{ $user->introduce }}</p>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="imageList">
                   @foreach($image->postdetails as $detail)
-                    <img src="storage/{{ $detail->image }}" alt="" class="workDetailImage">
+                    <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workDetailImage">
                   @endforeach
                 </div>
               </div>
@@ -43,7 +43,9 @@
           @endforeach
         </div>
         <div class="moreLink">
-          <a href="{{ route('work') }}">more...</a>
+          @if($images->count() >= 4)
+            <a href="{{ route('work') }}">more...</a>
+          @endif
         </div>
       </div>
     </div>

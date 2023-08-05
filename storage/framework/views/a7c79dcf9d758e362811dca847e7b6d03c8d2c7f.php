@@ -3,12 +3,12 @@
 <div class="body">
   <div class="article">
     <div>
-      <img src="storage/<?php echo e($user->background); ?>" alt="トップ写真" class="topPic">
+      <img src="<?php echo e(asset('storage/'.$user->background)); ?>" alt="トップ写真" class="topPic">
     </div>
     <div class="introduce">
       <h2>About</h2>
       <div class="introduceContents">
-        <img src="storage/<?php echo e($user->image); ?>" alt="" class="profileImage">
+        <img src="<?php echo e(asset('storage/'.$user->image)); ?>" alt="" class="profileImage">
         <div class="introduceText">
           <p>NAME: <strong><?php echo e($user->name); ?></strong></p>
           <p><?php echo e($user->introduce); ?></p>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="imageList">
                   <?php $__currentLoopData = $image->postdetails; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="storage/<?php echo e($detail->image); ?>" alt="" class="workDetailImage">
+                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="" class="workDetailImage">
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
               </div>
@@ -41,7 +41,9 @@
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <div class="moreLink">
-          <a href="<?php echo e(route('work')); ?>">more...</a>
+          <?php if($images->count() >= 4): ?>
+            <a href="<?php echo e(route('work')); ?>">more...</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>

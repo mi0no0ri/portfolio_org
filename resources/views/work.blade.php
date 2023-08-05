@@ -7,8 +7,7 @@
     <div class="modalList">
       @foreach($images as $index => $image)
       @if($image->count() >= 6)
-      <img src="storage/{{ $image->photo }}" alt="" class="workImg" data-target="modal{{$index}}">
-
+      <img src="{{ asset('storage/'.$image->photo) }}" alt="" class="workImg" data-target="modal{{$index}}">
         <div class="modal none" id="modal{{$index}}">
           <div class="modalWrap">
             <div class="modalContent">
@@ -22,7 +21,7 @@
               </div>
               <div class="workImages">
               @foreach($image->postdetails as $detail)
-                <img src="storage/{{ $detail->image }}" alt="" class="workDetailImage">
+                <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workDetailImage">
               @endforeach
               </div>
             </div>
@@ -41,7 +40,7 @@
                 @endforeach
                 <div class="functionLink">
                   <!-- 機能一覧消さないように（ここにしかないから） -->
-                  <p class="functionBtn" data-target="function{{$index}}">機能一覧</p>
+                  <!-- <p class="functionBtn" data-target="function{{$index}}">機能一覧</p> -->
                   <div class="functionModal none" id="function{{$index}}">
                     <h4>機能一覧</h4>
                     <div class="functionContents">
@@ -55,7 +54,7 @@
               </div>
               <div class="imageList">
                 @foreach($image->postdetails as $detail)
-                  <img src="storage/{{ $detail->image }}" alt="" class="workDetailImage">
+                  <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workDetailImage">
                 @endforeach
               </div>
             </div>

@@ -4,36 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\User;
 use App\Post;
+use App\Certification;
+use App\Skills;
 
 class UsersController extends Controller
 {
     public function top() {
-        $user = DB::table('users')
-            ->leftJoin('posts','users.id','=','posts.user_id')
+        $user = User::leftJoin('posts','users.id','=','posts.user_id')
             ->where('users.id',1)
             ->first();
-        $images = POST::find(1)
-            ->with(['languague', 'postdetails', 'functions'])
+        $images = Post::find(1)
+            ->with(['language', 'postdetails', 'functions'])
             ->limit(3)
             ->get();
         return view('portfolio',compact('user', 'images'));
     }
     public function about() {
-        $user = DB::table('users')
-            ->where('id', 1)
+        $user = User::where('id', 1)
             ->first();
-        $carrier = DB::table('users')
-            ->leftJoin('carrier', 'users.id', '=', 'carrier.user_id')
+        $userInfo = User::find(1)
             ->where('users.id', 1)
+            ->with(['hobbies', 'carriers'])
             ->get();
-        $hobbies = DB::table('users')
-            ->leftJoin('hobbies', 'users.id', '=', 'hobbies.user_id')
-            ->where('users.id', 1)
+        $certifications = Certification::orderBy('date', 'asc')
+            ->limit(5)
             ->get();
-        return view('about', compact('user', 'carrier', 'hobbies'));
-    }
-    public function contact() {
-        return view('contact');
+        $skills = Skills::with('usableLanguage')
+            ->get();
+        return view('about', compact('user', 'userInfo', 'certifications', 'skills'));
     }
 }

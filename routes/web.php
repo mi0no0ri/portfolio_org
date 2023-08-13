@@ -17,12 +17,16 @@ Route::get('/','UsersController@top')->name('top');
 Route::get('about','UsersController@about')->name('about');
 // 作品
 Route::get('work','PostsController@work')->name('work');
+// 作品詳細
+Route::get('work/{id}', 'PostsController@workdetail')->name('work.details');
 // お問い合わせ
-Route::get('contact','UsersController@contact')->name('contact');
+Route::get('contact','ContactsController@contact')->name('contact');
+// メール送信
+Route::post('contact','ContactsController@send')->name('contact.send');
 // お問い合わせフォーム
 Route::post('contact/create','ContactsController@create')->name('contact.create');
-// メール送信(仮)
-Route::post('contact','ContactsController@send')->name('send');
+// お問い合わせ確認
+Route::post('contact/confirm','ContactsController@confirm')->name('confirm');
 
 // ログイン
 Auth::routes();

@@ -6,15 +6,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\postdetails;
-use App\Languague;
+use App\Language;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRequest;
 
 class PostsController extends Controller
 {
     public function work() {
-        $images = POST::find(1)->with(['languague','postdetails'])->paginate(9);
+        $images = Post::find(1)
+            ->with(['language.usableLanguage','postdetails'])
+            ->paginate(9);
         return view('work',compact('images'));
+    }
+    public function workdetail($id) {
+        $detail = Post::where('id', $id)
+            ->first();
+        $images = postdetails::where('post_id', $id)
+            ->get();
+        return view('workDetail',compact('detail', 'images'));
     }
     public function post() {
         return view('auth.post');
@@ -42,16 +51,16 @@ class PostsController extends Controller
             }
         }
 
-        $languagues = $request->all();
-        foreach($languagues['languague'] as $languague){
-            foreach($languague as $key => $value){
+        $languagus = $request->all();
+        foreach($languages['language'] as $language){
+            foreach($language as $key => $value){
                 $data= [
                     'post_id' => $post->id,
-                    'languague' => $value,
+                    'language' => $value,
                     'created_at'=> now(),
                     'updated_at' => now()
                 ];
-                $languague = Languague::insert($data);
+                $language = language::insert($data);
             }
         }
 

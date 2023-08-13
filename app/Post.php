@@ -15,14 +15,14 @@ class Post extends Model
     ];
     public function postdetails()
     {
-        return $this->hasMany('App\Postdetails', 'post_id', 'id');
+        return $this->hasMany('App\Postdetails');
     }
-    public function languague()
+    public function language()
     {
-        return $this->hasMany('App\Languague', 'post_id', 'id');
+        return $this->hasMany('App\Language');
     }
     public function functions()
     {
-        return $this->hasMany('App\Functions', 'post_id', 'id');
+        return $this->hasMany('App\Functions');
     }
 }

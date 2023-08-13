@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('photo',50);
             $table->string('title',20);
             $table->string('description',255);
+            $table->string('url',100)->nullable();
             $table->timestamps();
         });
     }
@@ -31,8 +32,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languagues');
-        Schema::dropIfExists('postdetails');
         Schema::dropIfExists('posts');
+        Schema::dropIfExists('users');
     }
 }

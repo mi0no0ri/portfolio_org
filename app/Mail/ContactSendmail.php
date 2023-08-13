@@ -21,12 +21,12 @@ class ContactSendmail extends Mailable
      *
      * @return void
      */
-    public function __construct($contact)
+    public function __construct($inputs)
     {
-        $this->name = $contact['name'];
-        $this->email = $contact['email'];
-        $this->title = $contact['title'];
-        $this->contact = $contact['contact'];
+        $this->name = $inputs['name'];
+        $this->email = $inputs['email'];
+        $this->title = $inputs['title'];
+        $this->contact = $inputs['contact'];
     }
 
     /**

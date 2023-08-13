@@ -30,5 +30,6 @@ class CreateCarrierTable extends Migration
     public function down()
     {
         Schema::dropIfExists('carrier');
+        Schema::dropIfExists('users');
     }
 }

@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-/* common
+/*
+common
  */
 li {
   list-style: none;
@@ -23,8 +24,19 @@ footer {
 body {
   margin: 0;
 }
+h2 {
+  margin-top: 100px!important;
+}
+.moreLink a {
+  display: flex;
+  justify-content: end;
+}
+.hidden {
+  display: none;
+}
 
-/* header
+/*
+header
  */
 .selectLanguage {
   display: flex;
@@ -53,9 +65,11 @@ body {
   color: gray;
 }
 
-/* body
+/*
+body
  */
-/* about
+/*
+about
  */
 .topPic {
   height: 30vh;
@@ -90,7 +104,8 @@ body {
   border-radius: 100px;
 }
 
-/* footer
+/*
+footer
  */
 .snsIcon {
   display: flex;
@@ -128,7 +143,8 @@ footer {
   color: gray;
 }
 
-/* about
+/*
+about
  */
 .aboutContents {
   display: flex;
@@ -158,62 +174,42 @@ footer {
   margin: 20px 200px;
   line-height: 40px;
 }
-.barRemain {
-  height: 5px;
-  width: 100%;
-  border: gray 1px solid;
-  position: relative;
+.mySkillMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #000;
 }
-.bar1year {
-  height: 5px;
-  width: 20%;
-  background-color: gray;
-  border: gray 1px solid;
-  position: absolute;
-  margin-top: -23px;
+.mySkillMenu li {
+  cursor: pointer;
+  padding: 0 70px;
+  border-left: 1px solid #000;
 }
-.bar6month {
-  height: 5px;
-  width: 10%;
-  background-color: gray;
-  border: gray 1px solid;
-  position: absolute;
-  margin-top: -23px;
-}
-.bar3month {
-  height: 5px;
-  width: 5%;
-  background-color: gray;
-  border: gray 1px solid;
-  position: absolute;
-  margin-top: -23px;
-}
-.pointer1,
-.pointer2,
-.pointer3,
-.pointer4 {
-  position: relative;
-}
-.popup1,
-.popup2,
-.popup3,
-.popup4 {
-  position: absolute;
-  margin: -50px auto auto 150px;
-  border: gray 1px solid;
-  padding: 2px 5px;
-  border-radius: 10px;
-  background-color: #fff;
-  width: 80px;
-  text-align: center;
+.mySkillMenu li:first-child {
+  border-left: none;
 }
 .return {
   display: flex;
   justify-content: center;
   margin: 50px auto;
 }
+.aboutLanguageList {
+  margin: 50px 250px;
+}
+.aboutLanguageList li {
+  margin: 5px 0;
+}
+.aboutLanguageList ul {
+  margin-bottom: 100px;
+}
+.language1,
+.language2 {
+  display: block;
+}
 
-/* works
+/*
+works
  */
 .workWrap {
   margin: auto 100px;
@@ -238,7 +234,7 @@ footer {
   padding: 0 auto;
   height: 500px;
 }
-.workDetailImage {
+.workImage {
   height: auto;
   width: 40%;
 }
@@ -256,11 +252,6 @@ footer {
 }
 .workContents {
   margin: auto 150px;
-}
-.work a {
-  display: flex;
-  justify-content: end;
-  margin: auto 20px;
 }
 .workImg {
   height: 250px;
@@ -281,11 +272,51 @@ footer {
   cursor: pointer;
   position: relative;
 }
-.moreLink a {
-  margin-top: -50px;
+.worksList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px auto 0;
+}
+.worksContents {
+  width: 300px;
+}
+.workTopImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  justify-content: center;
+}
+.workUrl a:hover {
+  border-bottom: 1px solid #000;
 }
 
-/* modal
+/*
+workdetails
+ */
+.workDetailWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.workDetailDescription {
+  width: 30%;
+  margin: 20px;
+}
+.workDetailImageWrap {
+  width: 500px;
+  margin: 20px;
+}
+.workDetailImage {
+  width: 100%;
+  height: auto;
+  margin: 20px;
+}
+
+/*
+modal
  */
 .modal {
   position: absolute;
@@ -329,10 +360,10 @@ footer {
   width: 20vw;
   height: 150%;
 }
-.languagueTitle {
+.languageTitle {
   margin-bottom: 0;
 }
-.languagueList {
+.languageList {
   background-color: rgba(0, 0, 0, .4);
   padding: 4px 5px;
   border-radius: 5px;
@@ -351,54 +382,9 @@ footer {
   position: absolute;
   margin: -50px auto auto 900px;
 }
-.workImages {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
-  height: 100%;
-}
 
-/* function modal
- */
-.functionModal {
-  position: absolute;
-  background-color: rgba(0, 0, 0, .6);
-  color: #fff;
-  padding: 20px 20px 20px 100px;
-  width: 60vw;
-  border-radius: 10px;
-  z-index: 5;
-  top: -400px;
-  left: 0;
-  cursor: default;
-  height: auto;
-}
-.functionContents {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  height: 100vh;
-}
-.functionName {
-  line-height: 1.5;
-  width: 50%;
-}
-.functionClose {
-  cursor: pointer;
-  width: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, .6);
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  margin-top: -50px;
-  right: 20px;
-  color: rgba(0, 0, 0, .6);
-}
-
-/* contact
+/*
+contact
  */
 .contactInput {
   width: 300px;
@@ -429,6 +415,7 @@ footer {
 .submitBtn input {
   border: none;
   padding: 10px 20px;
+  cursor: pointer;
 }
 .error {
   color: #ff6e80;
@@ -439,8 +426,28 @@ footer {
   justify-content: space-between;
   margin: 20px 40px 0;
 }
+.contactMessage {
+  text-align: center;
+}
 
-/* admin */
+/*
+contact confirm
+ */
+.contactConfirmWrap {
+  width: 400px;
+}
+.contactConfirmContents {
+  display: flex;
+  flex-direction: column;
+}
+.contactConfirmContents label {
+  width: 150px;
+  height: 30px;
+}
+
+/*
+admin
+ */
 .adminPostList {
   display: flex;
   justify-content: start;
@@ -462,14 +469,20 @@ footer {
 .adminPostBtn {
   text-align: center;
 }
-/* contact */
+/*
+contact
+ */
 .contactList {
   width: 20%;
 }
 
-/* mobile */
+/*
+mobile
+ */
 @media (max-width: 900px) {
-  /* hamburger */
+  /*
+  hamburger
+   */
   .hamburger {
     position: relative;
     width: 30px;
@@ -559,7 +572,9 @@ footer {
     margin: 10px auto;
   }
 
-  /* common */
+  /*
+  common
+   */
   html {
     overflow-x: hidden;
   }
@@ -569,7 +584,9 @@ footer {
   .toUp {
     margin: 20px 30px 0 0;
   }
-  /* introduce */
+  /*
+  introduce
+   */
   .introduceContents {
     flex-direction: column;
     align-items: center;
@@ -578,7 +595,9 @@ footer {
     width: 70%;
     padding: 20px 0;
   }
-  /* work */
+  /*
+  work
+   */
   .workList {
     flex-direction: column;
     height: auto;
@@ -597,30 +616,9 @@ footer {
     flex-wrap: nowrap;
     align-items: center;
   }
-  .workDetailImage {
+  .workImage {
     width: 300px!important;
     height: auto;
-  }
-  .functionBtn {
-    margin-right: 20px;
-  }
-  .functionModal {
-    padding: 20px;
-    width: 80vw;
-    height: 160vh;
-  }
-  .functionContents {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    line-height: 0;
-  }
-  .functionName {
-    width: 100%;
-    margin: 5px 0;
-  }
-  .functionClose {
-    height: 10px;
-    width: 10px;
   }
   .moreLink {
     display: flex;
@@ -630,7 +628,9 @@ footer {
   .workContents {
     margin: auto 10px;
   }
-  /* contact */
+  /*
+  contact
+   */
   .contactForm {
     margin: 0 auto 30px;
   }
@@ -646,7 +646,9 @@ footer {
 }
 
 @media(max-width: 420px) {
-  /* about */
+  /*
+  about
+   */
   .aboutContents {
     flex-direction: column;
     align-items: center;

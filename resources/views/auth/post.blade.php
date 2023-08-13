@@ -41,14 +41,14 @@
               <div  class="adminPostList">
                 <label class="adminPostItem">使用言語</label>
                 <div class="adminPostLang">
-                  <label for="html"><input type="checkbox" name="languague[0][languague]" value="html" id="html">HTML</label>
-                  <label for="css"><input type="checkbox" name="languague[1][languague]" value="css" id="css">CSS</label>
-                  <label for="javascript"><input type="checkbox" name="languague[2][languague]" value="javascript" id="javascript">JavaScript</label>
-                  <label for="jquery"><input type="checkbox" name="languague[3][languague]" value="jquery" id="jquery">jQuery</label>
-                  <label for="php"><input type="checkbox" name="languague[4][languague]" value="php" id="php">PHP</label>
-                  <label for="laravel"><input type="checkbox" name="languague[5][languague]" value="laravel" id="laravel">Laravel</label>
-                  <label for="java"><input type="checkbox" name="languague[6][languague]" value="java" id="java">Java</label>
-                  <label for="spring"><input type="checkbox" name="languague[7][languague]" value="spring" id="spring">Spring boot</label>
+                  <label for="html"><input type="checkbox" name="language[0][language]" value="html" id="html">HTML</label>
+                  <label for="css"><input type="checkbox" name="language[1][language]" value="css" id="css">CSS</label>
+                  <label for="javascript"><input type="checkbox" name="language[2][language]" value="javascript" id="javascript">JavaScript</label>
+                  <label for="jquery"><input type="checkbox" name="language[3][language]" value="jquery" id="jquery">jQuery</label>
+                  <label for="php"><input type="checkbox" name="language[4][language]" value="php" id="php">PHP</label>
+                  <label for="laravel"><input type="checkbox" name="language[5][language]" value="laravel" id="laravel">Laravel</label>
+                  <label for="java"><input type="checkbox" name="language[6][language]" value="java" id="java">Java</label>
+                  <label for="spring"><input type="checkbox" name="language[7][language]" value="spring" id="spring">Spring boot</label>
                 </div>
               </div>
               <div class="adminPostBtn">

@@ -30,5 +30,6 @@ class CreateHobbiesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('hobbies');
+        Schema::dropIfExists('users');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<div class="body">
+<article class="body">
   <div class="article">
     <div>
       <img src="{{ asset('storage/'.$user->background) }}" alt="トップ写真" class="topPic">
@@ -28,14 +28,14 @@
                 <div class="workTitle">
                   <h4>{{ $image->title }}</h4>
                   <p>{{ $image->description }}</p>
-                  <p class="languagueTitle">使用言語：</p>
-                  @foreach($image->languague as $langs)
-                    <small class="languagueList">{{ $langs->languague }}</small>
+                  <p class="languageTitle">使用言語：</p>
+                  @foreach($image->language as $language)
+                    <small class="languageList">{{ $language->usableLanguage->language }}</small>
                   @endforeach
                 </div>
                 <div class="imageList">
                   @foreach($image->postdetails as $detail)
-                    <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workDetailImage">
+                    <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workImage">
                   @endforeach
                 </div>
               </div>
@@ -50,6 +50,6 @@
       </div>
     </div>
   </div>
-</div>
+</article>
 
 @endsection

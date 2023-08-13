@@ -1,6 +1,6 @@
 <?php $__env->startSection('contents'); ?>
 
-<div class="body">
+<article class="body">
   <div class="article">
     <div>
       <img src="<?php echo e(asset('storage/'.$user->background)); ?>" alt="トップ写真" class="topPic">
@@ -26,14 +26,14 @@
                 <div class="workTitle">
                   <h4><?php echo e($image->title); ?></h4>
                   <p><?php echo e($image->description); ?></p>
-                  <p class="languagueTitle">使用言語：</p>
-                  <?php $__currentLoopData = $image->languague; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $langs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <small class="languagueList"><?php echo e($langs->languague); ?></small>
+                  <p class="languageTitle">使用言語：</p>
+                  <?php $__currentLoopData = $image->language; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <small class="languageList"><?php echo e($language->usableLanguage->language); ?></small>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
                 <div class="imageList">
                   <?php $__currentLoopData = $image->postdetails; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="" class="workDetailImage">
+                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="" class="workImage">
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
               </div>
@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-</div>
+</article>
 
 <?php $__env->stopSection(); ?>
 

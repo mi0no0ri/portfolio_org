@@ -2,76 +2,81 @@
 
 @section('contents')
 
-  <div class="introduce">
-    <h2>About</h2>
-    <div>
-      <div class="aboutContents">
-        <div class="myImage">
-          <img src="{{ asset('storage/'.$user->image) }}" alt="" class="aboutImage">
-          <div class="aboutName">
-            <h4>名前：</h4>
-            <p>minori</p>
-          </div>
-        </div>
-        <div class="aboutIntroduce">
-          <h4>経歴</h4>
-          <ul>
-            @foreach($carrier as $carrier)
-              <li>{{ $carrier->carrier }}</li>
-            @endforeach
-          </ul>
-
-          <h4>自己紹介</h4>
-          <p>{{ $user->introduce }}</p>
-
-          <h4>趣味</h4>
-          <ul>
-            @foreach($hobbies as $hobby)
-              <li>{{ $hobby->hobby }}</li>
-            @endforeach
-          </ul>
+<article class="introduce">
+  <h2>About</h2>
+  <div>
+    <div class="aboutContents">
+      <div class="myImage">
+        <img src="{{ asset('storage/'.$user->image) }}" alt="" class="aboutImage">
+        <div class="aboutName">
+          <h4>NAME：</h4>
+          <p>minori</p>
         </div>
       </div>
-
-      <ul class="mySkill">
-        <div class="pointer1">
-          <li>HTML/CSS</li>
-          <p class="popup1 none">1year</p>
-          <div>
-            <p class="barRemain"> </p>
-            <p class="bar1year"> </p>
-          </div>
-        </div>
-        <div class="pointer2">
-          <li>JavaScript(jQuery)</li>
-          <p class="popup2 none">1year</p>
-          <div>
-            <p class="barRemain"> </p>
-            <p class="bar1year"> </p>
-          </div>
-        </div>
-        <div class="pointer3">
-          <li>PHP(Laravel)</li>
-          <p class="popup3 none">6months</p>
-          <div>
-            <p class="barRemain"> </p>
-            <p class="bar6month"> </p>
-          </div>
-        </div>
-        <div class="pointer4">
-          <li>Java</li>
-          <p class="popup4 none">3months</p>
-          <div>
-            <p class="barRemain"> </p>
-            <p class="bar3month"> </p>
-          </div>
-        </div>
-      </ul>
+      <div class="aboutIntroduce">
+        <!-- 経歴 -->
+        <h4>経歴</h4>
+        <ul>
+          @foreach($userInfo as $carriers)
+            @foreach($carriers->carriers as $carrier)
+              <li>{{ $carrier->carrier}}</li>
+            @endforeach
+          @endforeach
+        </ul>
+        <!-- 自己紹介 -->
+        <h4>自己紹介</h4>
+        <p>{{ $user->introduce }}</p>
+        <!-- 趣味 -->
+        <h4>趣味</h4>
+        <ul>
+          @foreach($userInfo as $hobbies)
+            @foreach($hobbies->hobbies as $hobby)
+              <li>{{ $hobby->hobby }}</li>
+            @endforeach
+          @endforeach
+        </ul>
+        <!-- 資格 -->
+        <h4>資格</h4>
+        <ul>
+          @foreach($certifications as $certification)
+            <li>{{ $certification->date->format('Y年m月') }}　{{ $certification->certification }}　取得</li>
+          @endforeach
+        </ul>
+      </div>
     </div>
-    <div class="return">
-      <a href="{{ route('top') }}">TOP</a>
+    <!-- 使用言語 -->
+    <div>
+      <div class="mySkill">
+        <h4>使用言語</h4>
+        <ul class="mySkillMenu">
+          <li class="htmlcss">HTML/CSS</li>
+          <li class="javascript">JavaScript(jQuery)</li>
+          <li class="php">PHP(Laravel)</li>
+          <li class="java">Java(Springboot)</li>
+        </ul>
+      </div>
+      <div class="aboutLanguageList">
+        <ul>
+          @foreach($skills as $skill)
+            @for($i = 1; $i <= 8; $i++)
+              @if($skill->language_id == $i)
+              <div class="language language{{ $i }} hidden">
+                <li>{{ $skill->skill }}</li>
+              </div>
+              @break
+              @endif
+            @endfor
+          @endforeach
+        </ul>
+        <div class="moreLink">
+          <a href="{{ route('work') }}">作品毎の機能はこちら</a>
+        </div>
+      </div>
     </div>
   </div>
-
+  <div class="return">
+    <a href="{{ route('top') }}">TOP</a>
+  </div>
+</article>
 
 @endsection

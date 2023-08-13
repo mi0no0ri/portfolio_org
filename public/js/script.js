@@ -12,49 +12,13 @@ $(function () {
       return false;
     });
     $(".modalClose").on("click", function () {
-      $(".modal").fadeOut(500);
-      $(".modal").removeClass("active");
+      $(".modal").fadeIn(500);
+      $(".modal").removeClass("active"); Out
     })
   });
 });
 
-// about languague
-for (let i = 1; i <= 4; i++) {
-  $(function () {
-    $('.pointer' + i).hover(
-      function () {
-        $('.popup' + i).fadeIn(200);
-        $('.popup' + i).removeClass('none');
-      },
-      function () {
-        $('.popup' + i).fadeOut(200);
-        $('.popup' + i).addClass('none');
-      });
-  });
-}
-
-// function modal
-$(function () {
-  $('.functionBtn').each(function () {
-    $(this).on('click', function () {
-      var target = $(this).data('target');
-      var modal = document.getElementById(target);
-      $(modal).fadeIn(500);
-      $(modal).addClass('active');
-      return false;
-    });
-    $('.functionClose').on('click', function () {
-      $('.functionModal').fadeOut(500);
-      $('.functionModal').removeClass('active');
-    })
-    $(document).on('click', function () {
-      $('.functionModal').fadeOut(500);
-      $('.functionModal').removeClass('active');
-    })
-  });
-});
-
-// hamburger
+// ハンバーガーメニュー
 $(function () {
   $('.hamburger').on('click', function () {
     $(this).toggleClass('active');
@@ -74,11 +38,33 @@ $(function () {
   });
 });
 
-// scroll top
+// ページトップへスクロール
 $(function () {
   $('.toUpLink').on('click', function () {
     var position = 0;
     var speed = 1000;
     $("html,body").animate({ scrollTop: position }, speed, 'swing');
+  });
+});
+
+// 使用言語選択
+$(function () {
+  var sec = 1000;
+  var out = 0;
+  $('.htmlcss').on('click', function () {
+    $('.language').fadeOut(out).addClass('hidden');
+    $('.language1, .language2').fadeIn(sec);
+  });
+  $('.javascript').on('click', function () {
+    $('.language').fadeOut(out).addClass('hidden');
+    $('.language3, .language4').fadeIn(sec);
+  });
+  $('.php').on('click', function () {
+    $('.language').fadeOut(out).addClass('hidden');
+    $('.language5, .language6').fadeIn(sec);
+  });
+  $('.java').on('click', function () {
+    $('.language').fadeOut(out).addClass('hidden');
+    $('.language7, .language8').fadeIn(sec);
   });
 });

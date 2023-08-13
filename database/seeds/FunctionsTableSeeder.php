@@ -380,7 +380,7 @@ class FunctionsTableSeeder extends Seeder
             ],
             [
                 'post_id' => '3',
-                'name' => 'lineへの遷移',
+                'name' => 'LINEへの遷移',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

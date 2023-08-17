@@ -34,6 +34,26 @@ h2 {
 .hidden {
   display: none;
 }
+.fadeIn {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 2s;
+}
+.fadeInRight {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: 2s;
+}
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: 2s;
+}
+.active {
+  opacity: 1;
+  transform: translateY(0);
+  transform: translateX(0);
+}
 
 /*
 header
@@ -170,11 +190,13 @@ about
 .myCarrier {
   display: flex;
 }
-.mySkill {
+.mySkill,
+.myTool {
   margin: 20px 200px;
   line-height: 40px;
 }
-.mySkillMenu {
+.mySkillMenu,
+.myToolMenu {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -186,7 +208,15 @@ about
   padding: 0 70px;
   border-left: 1px solid #000;
 }
+.myToolMenu li {
+  cursor: pointer;
+  padding: 0 100px;
+  border-left: 1px solid #000;
+}
 .mySkillMenu li:first-child {
+  border-left: none;
+}
+.myToolMenu li:first-child {
   border-left: none;
 }
 .return {
@@ -194,13 +224,16 @@ about
   justify-content: center;
   margin: 50px auto;
 }
-.aboutLanguageList {
+.aboutLanguageList,
+.aboutToolList {
   margin: 50px 250px;
 }
-.aboutLanguageList li {
+.aboutLanguageList li,
+.aboutToolList li {
   margin: 5px 0;
 }
-.aboutLanguageList ul {
+.aboutLanguageList ul,
+.aboutToolList ul {
   margin-bottom: 100px;
 }
 .language1,
@@ -249,6 +282,16 @@ works
   height: 100%;
   width: 60%;
   align-items: center;
+  overflow: scroll;
+  padding: 10px;
+}
+.imageList::-webkit-scrollbar-thumb {
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: padding-box;
+}
+.imageList::-webkit-scrollbar-track {
+  margin: 5px 0;
 }
 .workContents {
   margin: auto 150px;
@@ -287,7 +330,9 @@ works
   width: 300px;
   height: 300px;
   object-fit: cover;
+  object-position: 50% 0%;
   justify-content: center;
+  border: .5px solid #000;
 }
 .workUrl a:hover {
   border-bottom: 1px solid #000;

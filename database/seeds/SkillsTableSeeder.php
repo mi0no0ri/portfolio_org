@@ -74,7 +74,7 @@ class SkillsTableSeeder extends Seeder
             ],
             [
                 'language_id' => '6',
-                'skill' => '公式ライン連携',
+                'skill' => '公式LINE連携',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

@@ -17,6 +17,7 @@ class UsersController extends Controller
             ->first();
         $images = Post::find(1)
             ->with(['language', 'postdetails', 'functions'])
+            ->orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
         return view('portfolio',compact('user', 'images'));

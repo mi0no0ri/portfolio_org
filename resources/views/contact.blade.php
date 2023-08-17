@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<article class="contact">
+<article class="contact fadeIn">
   <h2>Contact</h2>
   @if(session('message'))
   <div class="contactMessage">{{ session('message') }}</div>

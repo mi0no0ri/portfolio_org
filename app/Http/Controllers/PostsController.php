@@ -15,6 +15,7 @@ class PostsController extends Controller
     public function work() {
         $images = Post::find(1)
             ->with(['language.usableLanguage','postdetails'])
+            ->orderBy('created_at', 'desc')
             ->paginate(9);
         return view('work',compact('images'));
     }

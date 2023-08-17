@@ -2,13 +2,13 @@
 
 <article class="body">
   <div class="article">
-    <div>
-      <img src="<?php echo e(asset('storage/'.$user->background)); ?>" alt="トップ写真" class="topPic">
+    <div class="fadeInLeft">
+      <img src="<?php echo e(asset('storage/'.$user->background)); ?>" alt="背景" class="topPic">
     </div>
-    <div class="introduce">
+    <div class="introduce fadeIn">
       <h2>About</h2>
       <div class="introduceContents">
-        <img src="<?php echo e(asset('storage/'.$user->image)); ?>" alt="" class="profileImage">
+        <img src="<?php echo e(asset('storage/'.$user->image)); ?>" alt="プロフィール写真" class="profileImage">
         <div class="introduceText">
           <p>NAME: <strong><?php echo e($user->name); ?></strong></p>
           <p><?php echo e($user->introduce); ?></p>
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div class="work">
+    <div class="work fadeIn">
       <h2>Works</h2>
       <div class="workContents">
         <div class="modalList">
@@ -30,10 +30,13 @@
                   <?php $__currentLoopData = $image->language; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <small class="languageList"><?php echo e($language->usableLanguage->language); ?></small>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  <div class="moreLink">
+                    <a href="<?php echo e(route('work.details', $image->id)); ?>">more...</a>
+                  </div>
                 </div>
                 <div class="imageList">
                   <?php $__currentLoopData = $image->postdetails; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="" class="workImage">
+                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="作品写真" class="workImage">
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
               </div>
@@ -41,9 +44,7 @@
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <div class="moreLink">
-          <?php if($images->count() >= 4): ?>
-            <a href="<?php echo e(route('work')); ?>">more...</a>
-          <?php endif; ?>
+          <a href="<?php echo e(route('work')); ?>">more...</a>
         </div>
       </div>
     </div>

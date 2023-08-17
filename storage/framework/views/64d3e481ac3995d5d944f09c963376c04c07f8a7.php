@@ -1,6 +1,6 @@
 <?php $__env->startSection('contents'); ?>
 
-<article class="contact">
+<article class="contact fadeIn">
   <h2>Contact</h2>
   <?php if(session('message')): ?>
   <div class="contactMessage"><?php echo e(session('message')); ?></div>

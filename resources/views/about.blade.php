@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<article class="introduce">
+<article class="introduce fadeIn">
   <h2>About</h2>
   <div>
     <div class="aboutContents">
@@ -71,6 +71,32 @@
         <div class="moreLink">
           <a href="{{ route('work') }}">作品毎の機能はこちら</a>
         </div>
+      </div>
+    </div>
+    <!-- 使用ツール -->
+    <div>
+      <div class="myTool">
+        <h4>使用ツール</h4>
+        <ul class="myToolMenu">
+          <li class="os">OS</li>
+          <li class="db">DB</li>
+          <li class="communicate">Communicate</li>
+          <li class="other">Other</li>
+        </ul>
+      </div>
+      <div class="aboutToolList">
+        <ul>
+          @foreach($skills as $skill)
+            @for($i = 1; $i <= 8; $i++)
+              @if($skill->language_id == $i)
+              <div class="tool tool{{ $i }} hidden">
+                <li>{{ $skill->skill }}</li>
+              </div>
+              @break
+              @endif
+            @endfor
+          @endforeach
+        </ul>
       </div>
     </div>
   </div>

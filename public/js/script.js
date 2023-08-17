@@ -67,4 +67,59 @@ $(function () {
     $('.language').fadeOut(out).addClass('hidden');
     $('.language7, .language8').fadeIn(sec);
   });
+  $('.other').on('click', function () {
+    $('.language').fadeOut(out).addClass('hidden');
+    $('.language9').fadeIn(sec);
+  });
+});
+
+// スクロールでスライド
+$(window).on('scroll load', function () {
+  var scroll = $(this).scrollTop();
+  var windowHeight = $(window).height();
+  $('.fadeIn, .fadeInRight, .fadeInLeft').each(function () {
+    var cntPos = $(this).offset().top;
+    if (scroll > cntPos - windowHeight + windowHeight / 3) {
+      $(this).addClass('active');
+    }
+  });
+});
+
+// 作品ごとにスライド
+$(function () {
+  var effect_btm = 400;
+  var effect_move = 200;
+  var effect_time = 2000;
+  $('.worksList').css({
+    opacity: 0
+  });
+  $('.worksList').children().each(function () {
+    $(this).css({
+      opacity: 0,
+      transform: 'translateY(' + effect_move + 'px)',
+      transition: effect_time + 'ms'
+    });
+  });
+  $(window).on('scroll load', function () {
+    var scroll_top = $(this).scrollTop();
+    var scroll_btm = scroll_top + $(this).height();
+    var effect_pos = scroll_btm - effect_btm;
+    $('.worksList').each(function () {
+      var this_pos = $(this).offset().top;
+      if (effect_pos > this_pos) {
+        $(this).css({
+          opacity: 1,
+          transform: 'translateY(0)'
+        });
+        $(this).children().each(function (i) {
+          $(this).delay(300 + i * 200).queue(function () {
+            $(this).css({
+              opacity: 1,
+              transform: 'translateY(0)'
+            }).dequeue();
+          });
+        });
+      }
+    });
+  });
 });

@@ -120,6 +120,42 @@ class LanguagesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'post_id' => '4',
+                'language_id' => '1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'post_id' => '4',
+                'language_id' => '2',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'post_id' => '4',
+                'language_id' => '3',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'post_id' => '4',
+                'language_id' => '4',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'post_id' => '4',
+                'language_id' => '5',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'post_id' => '4',
+                'language_id' => '6',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

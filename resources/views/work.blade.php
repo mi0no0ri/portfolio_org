@@ -7,18 +7,16 @@
   <div class="worksList">
     @foreach($images as $index => $image)
     <div class="worksContents">
-      <div>
-        <a href="{{ route('work.details', $image->id) }}">
-          <img src="{{ asset('storage/'.$image->postdetails[0]['image']) }}" alt="" class="workTopImage">
-        </a>
-        <h4>{{ $image->title }}</h4>
-        <p class="languageTitle">使用言語：</p>
-        @foreach($image->language as $language)
-          <small class="languageList">{{ $language->usableLanguage->language }}</small>
-        @endforeach
-        <div class="moreLink">
-          <a href="{{ route('work.details', $image->id) }}">more...</a>
-        </div>
+      <a href="{{ route('work.details', $image->id) }}">
+        <img src="{{ asset('storage/'.$image->postdetails[0]['image']) }}" alt="" class="workTopImage">
+      </a>
+      <h4>{{ $image->title }}</h4>
+      <p class="languageTitle">使用言語：</p>
+      @foreach($image->language as $language)
+        <small class="languageList">{{ $language->usableLanguage->language }}</small>
+      @endforeach
+      <div class="moreLink">
+        <a href="{{ route('work.details', $image->id) }}">more...</a>
       </div>
     </div>
     @endforeach

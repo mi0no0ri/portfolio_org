@@ -4,13 +4,13 @@
 
 <article class="body">
   <div class="article">
-    <div>
-      <img src="{{ asset('storage/'.$user->background) }}" alt="トップ写真" class="topPic">
+    <div class="fadeInLeft">
+      <img src="{{ asset('storage/'.$user->background) }}" alt="背景" class="topPic">
     </div>
-    <div class="introduce">
+    <div class="introduce fadeIn">
       <h2>About</h2>
       <div class="introduceContents">
-        <img src="{{ asset('storage/'.$user->image) }}" alt="" class="profileImage">
+        <img src="{{ asset('storage/'.$user->image) }}" alt="プロフィール写真" class="profileImage">
         <div class="introduceText">
           <p>NAME: <strong>{{ $user->name }}</strong></p>
           <p>{{ $user->introduce }}</p>
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="work">
+    <div class="work fadeIn">
       <h2>Works</h2>
       <div class="workContents">
         <div class="modalList">
@@ -32,10 +32,13 @@
                   @foreach($image->language as $language)
                     <small class="languageList">{{ $language->usableLanguage->language }}</small>
                   @endforeach
+                  <div class="moreLink">
+                    <a href="{{ route('work.details', $image->id) }}">more...</a>
+                  </div>
                 </div>
                 <div class="imageList">
                   @foreach($image->postdetails as $detail)
-                    <img src="{{ asset('storage/'.$detail->image) }}" alt="" class="workImage">
+                    <img src="{{ asset('storage/'.$detail->image) }}" alt="作品写真" class="workImage">
                   @endforeach
                 </div>
               </div>
@@ -43,9 +46,7 @@
           @endforeach
         </div>
         <div class="moreLink">
-          @if($images->count() >= 4)
-            <a href="{{ route('work') }}">more...</a>
-          @endif
+          <a href="{{ route('work') }}">more...</a>
         </div>
       </div>
     </div>

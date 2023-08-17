@@ -12,9 +12,9 @@
 <body>
   <header>
     <div class="titleWrap">
-      <div class="title">
+      <div class="title fadeInLeft">
         <a href="<?php echo e(route('top')); ?>">
-          <p class="title">minori no gallery</p>
+          <p>minori no gallery</p>
         </a>
       </div>
       <div class="hamburger">
@@ -24,7 +24,7 @@
       </div>
     </div>
     <nav class="navi">
-      <ul class="menuBar">
+      <ul class="menuBar fadeInRight">
         <li><a href="<?php echo e(route('top')); ?>">Top</a></li>
         <li><a href="<?php echo e(route('about')); ?>">About</a></li>
         <li><a href="<?php echo e(route('work')); ?>">Works</a></li>

@@ -86,11 +86,11 @@
       </div>
       <div class="aboutToolList">
         <ul>
-          @foreach($skills as $skill)
+          @foreach($tools as $tool)
             @for($i = 1; $i <= 8; $i++)
-              @if($skill->language_id == $i)
+              @if($tool->tool_id == $i)
               <div class="tool tool{{ $i }} hidden">
-                <li>{{ $skill->skill }}</li>
+                <li>{{ $tool->skill }}</li>
               </div>
               @break
               @endif

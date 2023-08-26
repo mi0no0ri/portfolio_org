@@ -201,17 +201,17 @@ about
   flex-direction: row;
   justify-content: center;
   padding: 20px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #2e2e2e;
 }
 .mySkillMenu li {
   cursor: pointer;
   padding: 0 70px;
-  border-left: 1px solid #000;
+  border-left: 1px solid #2e2e2e;
 }
 .myToolMenu li {
   cursor: pointer;
   padding: 0 100px;
-  border-left: 1px solid #000;
+  border-left: 1px solid #2e2e2e;
 }
 .mySkillMenu li:first-child {
   border-left: none;
@@ -239,6 +239,12 @@ about
 .language1,
 .language2 {
   display: block;
+}
+.tool1 {
+  display: block;
+}
+.aboutSelected {
+  border-bottom: 1px solid #2e2e2e;
 }
 
 /*
@@ -332,10 +338,10 @@ works
   object-fit: cover;
   object-position: 50% 0%;
   justify-content: center;
-  border: .5px solid #000;
+  border: .5px solid #2e2e2e;
 }
 .workUrl a:hover {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #2e2e2e;
 }
 
 /*

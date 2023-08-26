@@ -67,11 +67,31 @@ $(function () {
     $('.language').fadeOut(out).addClass('hidden');
     $('.language7, .language8').fadeIn(sec);
   });
+});
+
+// 使用ツール選択
+$(function () {
+  var sec = 1000;
+  var out = 0;
+  $('.os').on('click', function () {
+    $('.tool').fadeOut(out).addClass('hidden');
+    $('.tool1').fadeIn(sec);
+  });
+  $('.db').on('click', function () {
+    $('.tool').fadeOut(out).addClass('hidden');
+    $('.tool2').fadeIn(sec);
+  });
+  $('.communicate').on('click', function () {
+    $('.tool').fadeOut(out).addClass('hidden');
+    $('.tool3').fadeIn(sec);
+  });
   $('.other').on('click', function () {
-    $('.language').fadeOut(out).addClass('hidden');
-    $('.language9').fadeIn(sec);
+    $('.tool').fadeOut(out).addClass('hidden');
+    $('.tool4').fadeIn(sec);
   });
 });
+
+
 
 // スクロールでスライド
 $(window).on('scroll load', function () {

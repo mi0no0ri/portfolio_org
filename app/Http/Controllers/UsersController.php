@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use App\Certification;
 use App\Skills;
+use App\Tools;
 
 class UsersController extends Controller
 {
@@ -34,6 +35,8 @@ class UsersController extends Controller
             ->get();
         $skills = Skills::with('usableLanguage')
             ->get();
-        return view('about', compact('user', 'userInfo', 'certifications', 'skills'));
+        $tools = Tools::with('usableTool')
+            ->get();
+        return view('about', compact('user', 'userInfo', 'certifications', 'skills', 'tools'));
     }
 }

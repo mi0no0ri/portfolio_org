@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsableLanguagesTableSeeder::class);
         $this->call(SkillsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
+        $this->call(UsableToolsTableSeeder::class);
+        $this->call(ToolsTableSeeder::class);
     }
 }

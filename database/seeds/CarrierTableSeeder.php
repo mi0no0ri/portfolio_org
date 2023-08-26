@@ -26,7 +26,7 @@ class CarrierTableSeeder extends Seeder
             ],
             [
                 'user_id' => '1',
-                'carrier' => '2021年3月〜　某IT会社にてプログラマーとして勤務',
+                'carrier' => '2021年3月〜　某IT会社にてSEとして勤務',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

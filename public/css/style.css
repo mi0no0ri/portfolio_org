@@ -497,37 +497,6 @@ contact confirm
 }
 
 /*
-admin
- */
-.adminPostList {
-  display: flex;
-  justify-content: start;
-  margin: 30px auto;
-}
-.adminPostItem {
-  width: 200px;
-}
-#description {
-  height: 100px;
-  width: 300px;
-}
-.adminPostLang {
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.adminPostBtn {
-  text-align: center;
-}
-/*
-contact
- */
-.contactList {
-  width: 20%;
-}
-
-/*
 mobile
  */
 @media (max-width: 900px) {

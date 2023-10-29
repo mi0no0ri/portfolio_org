@@ -28,27 +28,12 @@ class UsableLanguagesTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'language' => 'jQuery',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
                 'language' => 'PHP',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'language' => 'Laravel',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
                 'language' => 'Java',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'language' => 'Spring',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

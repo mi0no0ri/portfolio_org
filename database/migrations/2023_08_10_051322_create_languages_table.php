@@ -31,7 +31,5 @@ class CreateLanguagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('languages');
-        Schema::dropIfExists('posts');
-        Schema::dropIfExists('usableLanguages');
     }
 }

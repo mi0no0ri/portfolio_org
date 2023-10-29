@@ -17,12 +17,26 @@ class Post extends Model
     {
         return $this->hasMany('App\Postdetails');
     }
+    public function functions()
+    {
+        return $this->hasMany('App\Functions');
+    }
     public function language()
     {
         return $this->hasMany('App\Language');
     }
-    public function functions()
+    public function framework()
     {
-        return $this->hasMany('App\Functions');
+        return $this->hasMany('App\Frameworks');
+    }
+    public function usableLanguages()
+    {
+        return $this->belongsToMany('App\UsableLanguages', 'languages', 'post_id', 'language_id')
+                        ->withTimestamps();
+    }
+    public function usableFrameworks()
+    {
+        return $this->belongsToMany('App\UsableFrameworks', 'frameworks', 'post_id', 'framework_id')
+                        ->withTimestamps();
     }
 }

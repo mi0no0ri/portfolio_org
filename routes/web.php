@@ -31,14 +31,43 @@ Route::post('contact/confirm','ContactsController@confirm')->name('confirm');
 // ログイン
 Auth::routes();
 
-Route::middleware('auth')
+Route::name('admin.')
+  ->middleware('auth')
   ->group(function(){
-    // 投稿画面
-    Route::get('post', 'PostsController@post')->name('post');
-    // 投稿作成
-    Route::post('create', 'PostsController@create')->name('create');
-    // お問い合わせ
-    Route::get('contactlist', 'ContactsController@contactlist')->name('contactlist');
+    // 【管理者】自己紹介ページ
+    Route::get('auth/about', 'Auth\UsersController@about')->name('about');
+    // 【管理者】プロフィール変更表示
+    Route::get('auth/profile', 'Auth\UsersController@profile')->name('profile');
+    // 【管理者】プロフィール更新
+    Route::put('auth/profile', 'Auth\UsersController@updateProfile')->name('updateProfile');
+    // 【管理者】パスワード変更表示
+    Route::get('auth/password', 'Auth\UsersController@password')->name('password');
+    // 【管理者】パスワード更新
+    Route::put('auth/password', 'Auth\UsersController@updatePassword')->name('updatePassword');
+    // 【管理者】使用言語変更表示
+    Route::get('auth/language', 'Auth\UsersController@language')->name('language');
+    // 【管理者】使用言語更新
+    Route::post('auth/language', 'Auth\UsersController@addLanguage')->name('addLanguage');
+    // 【管理者】使用言語、フレームワーク削除
+    Route::delete('auth/language/{id}', 'Auth\UsersController@deleteLanguage')->name('deleteLanguage');
+    // 【管理者】使用フレームワーク追加
+    Route::post('auth/language/{id}', 'Auth\UsersController@addFramework')->name('addFramework');
+    // 【管理者】使用ツール変更表示
+    Route::get('auth/tool', 'Auth\UsersController@tool')->name('tool');
+    // 【管理者】使用ツール追加
+    Route::post('auth/tool', 'Auth\UsersController@addTools')->name('addTools');
+    // 【管理者】使用ツール削除
+    Route::delete('auth/tool/{id}', 'Auth\UsersController@deleteTool')->name('deleteTool');
+    // 【管理者】投稿画面
+    Route::get('auth/post', 'Auth\PostsController@post')->name('post');
+    // 【管理者】投稿作成
+    Route::post('auth/create', 'Auth\PostsController@create')->name('create');
+    // 【管理者】投稿編集一覧
+    Route::get('auth/postlist', 'Auth\PostsController@postlist')->name('postlist');
+    // 【管理者】投稿編集詳細
+    Route::get('auth/post/edit/{id}', 'Auth\PostsController@postEdit')->name('postEdit');
+    // 【管理者】お問い合わせ
+    Route::get('auth/contactlist', 'Auth\ContactsController@contactlist')->name('contactlist');
   });
 
 Route::get('home', 'HomeController@index')->name('home');

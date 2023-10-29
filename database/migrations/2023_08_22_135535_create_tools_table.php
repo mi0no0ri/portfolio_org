@@ -15,6 +15,8 @@ class CreateToolsTable extends Migration
     {
         Schema::create('tools', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('tool_id');
             $table->foreign('tool_id')->references('id')->on('usableTools');
             $table->string('skill',30);

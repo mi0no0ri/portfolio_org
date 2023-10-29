@@ -27,6 +27,6 @@ class CreateUsableToolsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tools');
+        Schema::dropIfExists('usableTools');
     }
 }

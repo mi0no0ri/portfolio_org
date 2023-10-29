@@ -40,7 +40,7 @@ class PostsTableSeeder extends Seeder
                 'user_id' => '1',
                 'title' => 'イベントカフェ『うつCAFE』',
                 'description' => 'うつを経験したオーナーがうつで悩んでいる方、生きづらさを感じる方を一人にさせない場所として開催した「うつCAFE」。そちらのホームページを作成させていただきました。お店の予約は基本LINEとのことで公式LINEとの連携、予約待ちをしている方の人数の見える化をメインとしてサイトを作成。サイトを訪れた方の心に余裕を作って欲しいという思いから全体的に余白を多めに、色自体は少なめにしつつ暗くならないようにして作成しました。',
-                'url' => 'https://793b-2400-4051-19e2-8200-cc9a-546a-6555-bff.ngrok-free.app',
+                'url' => 'https://utsucafe.sakura.ne.jp/utsucafe/',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

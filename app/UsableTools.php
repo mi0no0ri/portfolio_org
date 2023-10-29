@@ -11,8 +11,9 @@ class UsableTools extends Model
     protected $fillable = [
         'tool',
     ];
+
     public function tools()
     {
-        return $this->hasMany('App\Tools');
+        return $this->hasMany('App\Tools', 'tool_id', 'id');
     }
 }

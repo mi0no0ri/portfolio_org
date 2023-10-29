@@ -30,6 +30,5 @@ class CreateFunctionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('functions');
-        Schema::dropIfExists('posts');
     }
 }

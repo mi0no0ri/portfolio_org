@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tools extends Model
 {
     protected $fillable = [
-        'language_id',
+        'tool_id',
         'skill',
     ];
     public function usableTool()

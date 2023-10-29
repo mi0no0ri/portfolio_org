@@ -2,65 +2,63 @@
 
 @section('content')
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
-        <h2 class="panel-heading">Post</h2>
-        <div class="panel-body">
-          <form action="{{ route('create') }}" method="post">
-            {{ csrf_field() }}
-            <div class="adminPostWrap">
-              @foreach($errors->all() as $error)
-                <p class="error">{{ $error }}</p>
-              @endforeach
-              <div class="adminPostList">
-                <label for="photo" class="adminPostItem">トップ画像</label>
-                <input type="file" name="photo" id="photo">
-              </div>
-              <div class="adminPostList">
-                <label for="title" class="adminPostItem">タイトル</label>
-                <input type="text" name="title" id="title">
-              </div>
-              <div class="adminPostList">
-                <label for="description" class="adminPostItem">説明</label>
-                <input type="textarea" name="description" id="description">
-              </div>
-              <div class="adminPostList">
-                <label for="subImage1" class="adminPostItem">サブ画像1</label>
-                <input type="file" name="postdetail[0][postdetail]" id="subImage1">
-              </div>
-              <div class="adminPostList">
-                <label for="subImage2" class="adminPostItem">サブ画像2</label>
-                <input type="file" name="postdetail[1][postdetail]" id="subImage2">
-              </div>
-              <div class="adminPostList">
-                <label for="subImage3" class="adminPostItem">サブ画像3</label>
-                <input type="file" name="postdetail[2][postdetail]" id="subImage3">
-              </div>
-              <div  class="adminPostList">
-                <label class="adminPostItem">使用言語</label>
-                <div class="adminPostLang">
-                  <label for="html"><input type="checkbox" name="language[0][language]" value="html" id="html">HTML</label>
-                  <label for="css"><input type="checkbox" name="language[1][language]" value="css" id="css">CSS</label>
-                  <label for="javascript"><input type="checkbox" name="language[2][language]" value="javascript" id="javascript">JavaScript</label>
-                  <label for="jquery"><input type="checkbox" name="language[3][language]" value="jquery" id="jquery">jQuery</label>
-                  <label for="php"><input type="checkbox" name="language[4][language]" value="php" id="php">PHP</label>
-                  <label for="laravel"><input type="checkbox" name="language[5][language]" value="laravel" id="laravel">Laravel</label>
-                  <label for="java"><input type="checkbox" name="language[6][language]" value="java" id="java">Java</label>
-                  <label for="spring"><input type="checkbox" name="language[7][language]" value="spring" id="spring">Spring boot</label>
-                </div>
-              </div>
-              <div class="adminPostBtn">
-                <input type="submit" value="登録">
-              </div>
-            </div>
-          </form>
+<article class="container">
+  <p>{{ Breadcrumbs::render('post') }}</p>
+  <h2 class="panel-heading">Post</h2>
+  <div>
+    <a href="{{ route('admin.postlist') }}">投稿一覧はこちら</a>
+  </div>
+  <div class="panel-body">
+    <form action="{{ route('admin.create') }}" method="post" enctype="multipart/form-data">
+      {{ csrf_field() }}
+      <div class="adminPostWrap">
+        @foreach($errors->all() as $error)
+          <p class="error">{{ $error }}</p>
+        @endforeach
+        <div class="adminPostList">
+          <label for="title" class="adminPostItem">タイトル</label>
+          <input type="text" name="title" id="title">
+        </div>
+        <div class="adminPostList">
+          <label for="description" class="adminPostItem">説明</label>
+          <input type="textarea" name="description" id="description">
+        </div>
+        <div class="adminPostList">
+          <label for="image1" class="adminPostItem">イメージ画像1</label>
+          <input type="file" name="postdetail[0][postdetail]" id="image1">
+        </div>
+        <div class="adminPostList">
+          <label for="image2" class="adminPostItem">イメージ画像2</label>
+          <input type="file" name="postdetail[1][postdetail]" id="image2">
+        </div>
+        <div class="adminPostList">
+          <label for="image3" class="adminPostItem">イメージ画像3</label>
+          <input type="file" name="postdetail[2][postdetail]" id="image3">
+        </div>
+        <div class="adminPostList">
+          <label for="url" class="adminPostItem">URL</label>
+          <input type="text" name="url" id="url">
+        </div>
+        <div  class="adminPostList">
+          <label class="adminPostItem">使用言語</label>
+          <div class="adminPostLang">
+            @foreach($languages as $index=>$language)
+              <label for="{{ $language->language }}">
+                <input type="checkbox" name="language[' {{ $index }} '][language]" value="{{ $language->id }}" id="{{ $language->language }}">
+                {{ $language->language }}
+              </label>
+            @endforeach
+          </div>
+        </div>
+        <div class="adminPostBtn">
+          <input type="submit" value="登録">
+        </div>
+        <div>
+          <a href="{{ route('home') }}">Back</a>
         </div>
       </div>
-    </div>
+    </form>
   </div>
-</div>
-
+</article>
 
 @endsection

@@ -1,6 +1,6 @@
 'use strict';
 
-// modal
+// モーダル
 $(function () {
   $('.workImg').each(function () {
     $(this).on('click', function () {
@@ -47,7 +47,7 @@ $(function () {
   });
 });
 
-// 使用言語選択
+// 使用言語表示
 $(function () {
   var sec = 1000;
   var out = 0;
@@ -69,7 +69,7 @@ $(function () {
   });
 });
 
-// 使用ツール選択
+// 使用ツール表示
 $(function () {
   var sec = 1000;
   var out = 0;
@@ -90,8 +90,6 @@ $(function () {
     $('.tool4').fadeIn(sec);
   });
 });
-
-
 
 // スクロールでスライド
 $(window).on('scroll load', function () {

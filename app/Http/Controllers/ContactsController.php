@@ -46,8 +46,4 @@ class ContactsController extends Controller
         ]);
         return redirect()->route('contact');
     }
-    public function contactlist() {
-        $contacts = DB::table('contacts')->get();
-        return view('auth.contact', compact('contacts'));
-    }
 }

@@ -36,6 +36,7 @@ class UsersController extends Controller
         $skills = Skills::with('usableLanguage')
             ->get();
         $tools = Tools::with('usableTool')
+            ->where('tools.user_id', '1')
             ->get();
         return view('about', compact('user', 'userInfo', 'certifications', 'skills', 'tools'));
     }

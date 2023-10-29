@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+/*
+common
+*/
+h2 {
+  margin-top: 0px!important;
+}
+
+/*
+admin
+*/
+.adminPostList {
+  display: flex;
+  justify-content: start;
+  margin: 30px auto;
+}
+.adminPostItem {
+  width: 200px;
+}
+#description {
+  height: 100px;
+  width: 300px;
+}
+.adminPostLang {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.adminPostBtn {
+  text-align: center;
+}
+.breadcrumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*
+profile
+*/
+.profileImage,
+.profileBackground {
+  height: 200px;
+  width: auto;
+}
+
+/*
+Language
+*/
+.useLanguageRegister {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 180px;
+}
+.useLanguageRegisterInput {
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: rgba(0, 0, 0, 0);
+  width: 250px;
+}
+.useLanguageList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+.useLanguageList button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: 20px;
+}
+.useLanguageBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.addFrameworkInput {
+  margin-left: 200px;
+}
+.addFrameworkInput input.addFramework {
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*
+post
+*/
+.adminPostlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.adminPostlistContents {
+  display: block;
+  text-align: center;
+  margin: 50px 30px;
+}
+.adminPostDetails {
+  width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.adminPostImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+
+/*
+contact
+ */
+.contactList {
+  width: 20%;
+}

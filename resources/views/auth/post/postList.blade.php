@@ -11,7 +11,7 @@
       <div class="adminPostlistContents">
         <a href="{{ route('admin.postEdit', $post->id) }}">
           <h4>{{ $post->title }}</h4>
-          <img src="{{ asset('storage/'. $post->postdetails[0]['image']) }}" alt="" class="adminPostImage">
+          <img src="{{ asset('storage/work/'. $post->postdetails['0']['image']) }}" alt="" class="adminPostImage">
           <li class="adminPostDetails">{{ $post->description }}</li>
         </a>
       </div>

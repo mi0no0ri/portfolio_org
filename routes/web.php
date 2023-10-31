@@ -46,7 +46,7 @@ Route::name('admin.')
     Route::put('auth/password', 'Auth\UsersController@updatePassword')->name('updatePassword');
     // 【管理者】使用言語変更表示
     Route::get('auth/language', 'Auth\UsersController@language')->name('language');
-    // 【管理者】使用言語更新
+    // 【管理者】使用言語追加
     Route::post('auth/language', 'Auth\UsersController@addLanguage')->name('addLanguage');
     // 【管理者】使用言語、フレームワーク削除
     Route::delete('auth/language/{id}', 'Auth\UsersController@deleteLanguage')->name('deleteLanguage');
@@ -66,6 +66,10 @@ Route::name('admin.')
     Route::get('auth/postlist', 'Auth\PostsController@postlist')->name('postlist');
     // 【管理者】投稿編集詳細
     Route::get('auth/post/edit/{id}', 'Auth\PostsController@postEdit')->name('postEdit');
+    // 【管理者】投稿更新
+    Route::put('auth/post/edit/{id}', 'Auth\PostsController@postUpdate')->name('postUpdate');
+    // 【管理者】投稿削除
+    Route::delete('auth/post/edit/{id}', 'Auth\PostsController@postDelete')->name('postDelete');
     // 【管理者】お問い合わせ
     Route::get('auth/contactlist', 'Auth\ContactsController@contactlist')->name('contactlist');
   });

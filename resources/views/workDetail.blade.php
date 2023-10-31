@@ -31,7 +31,7 @@
     </div>
     <div class="workDetailImageWrap">
       @foreach($images as $image)
-        <img src="{{ asset('storage/'.$image->image) }}" alt="" class="workDetailImage">
+        <img src="{{ asset('storage/work/'.$image->image) }}" alt="" class="workDetailImage">
       @endforeach
     </div>
   </div>

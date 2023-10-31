@@ -77,7 +77,7 @@ class UsersController extends Controller
         return view('auth/about/language', compact('langs'));
     }
 
-    // 使用言語更新
+    // 使用言語追加
     public function addLanguage(LanguageRequest $request) {
         UsableLanguages::create([
             'language' => $request->language,

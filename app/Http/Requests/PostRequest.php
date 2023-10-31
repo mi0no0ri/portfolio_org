@@ -26,7 +26,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|max:20',
             'description' => 'required|max:255',
-            'postdetail' => 'required|max:50',
+            'image' => 'required|max:50',
         ];
     }
     public function messages()
@@ -36,8 +36,8 @@ class PostRequest extends FormRequest
             'title.max' => '最大20文字までです。',
             'description.required' => '説明は必須です。',
             'description.max' => '最大255文字です。',
-            'postdetail.required' => 'イメージ画像は3枚必要です。',
-            'postdetail.max' => '最大50文字です。',
+            'image.required' => 'イメージ画像は3枚必要です。',
+            'image.max' => '最大50文字です。',
         ];
     }
 }

@@ -25,15 +25,15 @@
         </div>
         <div class="adminPostList">
           <label for="image1" class="adminPostItem">イメージ画像1</label>
-          <input type="file" name="postdetail[0][postdetail]" id="image1">
+          <input type="file" name="image[0][image]" id="image1">
         </div>
         <div class="adminPostList">
           <label for="image2" class="adminPostItem">イメージ画像2</label>
-          <input type="file" name="postdetail[1][postdetail]" id="image2">
+          <input type="file" name="image[1][image]" id="image2">
         </div>
         <div class="adminPostList">
           <label for="image3" class="adminPostItem">イメージ画像3</label>
-          <input type="file" name="postdetail[2][postdetail]" id="image3">
+          <input type="file" name="image[2][image]" id="image3">
         </div>
         <div class="adminPostList">
           <label for="url" class="adminPostItem">URL</label>
@@ -47,6 +47,12 @@
                 <input type="checkbox" name="language[' {{ $index }} '][language]" value="{{ $language->id }}" id="{{ $language->language }}">
                 {{ $language->language }}
               </label>
+              @foreach($language->lang_frames as $frame)
+                <label for="{{ $frame->usableFramework->framework }}">
+                  <input type="checkbox" name="framework[' {{ $index }} '][framework]" value="{{ $frame->usableFramework->id }}" id="{{ $frame->usableFramework->framework }}">
+                  {{ $frame->usableFramework->framework }}
+                </label>
+              @endforeach
             @endforeach
           </div>
         </div>

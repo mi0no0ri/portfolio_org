@@ -8,7 +8,7 @@
     @foreach($images as $index => $image)
     <div class="worksContents">
       <a href="{{ route('work.details', $image->id) }}">
-        <img src="{{ asset('storage/'.$image->postdetails[0]['image']) }}" alt="" class="workTopImage">
+        <img src="{{ asset('storage/work/'.$image->postdetails[0]['image']) }}" alt="" class="workTopImage">
       </a>
       <h4>{{ $image->title }}</h4>
       <p class="languageTitle">使用言語：</p>

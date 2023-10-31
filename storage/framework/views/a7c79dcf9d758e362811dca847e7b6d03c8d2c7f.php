@@ -36,7 +36,7 @@
                 </div>
                 <div class="imageList">
                   <?php $__currentLoopData = $image->postdetails; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $detail): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <img src="<?php echo e(asset('storage/'.$detail->image)); ?>" alt="作品写真" class="workImage">
+                    <img src="<?php echo e(asset('storage/work/'.$detail->image)); ?>" alt="作品写真" class="workImage">
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
               </div>

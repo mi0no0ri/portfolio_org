@@ -5,8 +5,13 @@
 <article class="container">
   <p>{{ Breadcrumbs::render('postedit', $post) }}</p>
   <h2 class="panel-heading">{{ $post->title }}</h2>
+  <form action="{{ route('admin.postDelete', $post->id) }}" method="post">
+    {{ csrf_field() }}
+    {{ method_field('delete') }}
+    <input type="submit" value="削除" onclick="return confirm('投稿を削除しますか?')">
+  </form>
   <div class="panel-body">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.postUpdate', $post->id) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       {{ method_field('put') }}
       <div>
@@ -24,21 +29,21 @@
       <div>
         <div>
           <label for="image1">イメージ画像1
-            <img src="{{ asset('storage/' . $post->postdetails[0]['image']) }}" alt="" class="adminPostImage">
+            <img src="{{ asset('storage/work/' . $post->postdetails[0]['image']) }}" alt="" class="adminPostImage">
           </label>
-          <input type="file" name="postdetail[0][postdetail]" id="image1">
+          <input type="file" name="image[0][image]" id="image1" value="{{ $post->postdetails[0]['image'] }}">
         </div>
         <div>
           <label for="image2">イメージ画像2
-            <img src="{{ asset('storage/' . $post->postdetails[1]['image']) }}" alt="" class="adminPostImage">
+            <img src="{{ asset('storage/work/' . $post->postdetails[1]['image']) }}" alt="" class="adminPostImage">
           </label>
-          <input type="file" name="postdetail[1][postdetail]" id="image2">
+          <input type="file" name="image[1][image]" id="image2" value="{{ $post->postdetails[1]['image'] }}">
         </div>
         <div>
           <label for="image3">イメージ画像3
-            <img src="{{ asset('storage/' . $post->postdetails[2]['image']) }}" alt="" class="adminPostImage">
+            <img src="{{ asset('storage/work/' . $post->postdetails[2]['image']) }}" alt="" class="adminPostImage">
           </label>
-          <input type="file" name="postdetail[2][postdetail]" id="image3">
+          <input type="file" name="image[2][image]" id="image3" value="{{ $post->postdetails[2]['image'] }}">
         </div>
       </div>
       <div>
@@ -47,11 +52,15 @@
           <?php
           ?>
           @foreach($langs as $index=>$lang)
-            <input type="checkbox" name="language[]" value="{{ $lang->language }}" id="language{{ $index }}">
-            <label for="language{{ $index }}">{{ $lang->language }}</label>
+            <label for="{{ $lang->language }}">
+              <input type="checkbox" name="language[' {{ $index }} '][language]" value="{{ $lang->id }}" id="{{ $lang->language }}">
+              {{ $lang->language }}
+            </label>
             @foreach($lang->lang_frames as $frame)
-              <input type="checkbox" name="framework" value="{{ $frame->usableFramework->framework }}" id="framework{{ $index }}">
-              <label for="framework{{ $index }}">{{ $frame->usableFramework->framework }}</label>
+              <label for="{{ $frame->usableFramework->framework }}">
+                <input type="checkbox" name="framework[' {{ $index }} '][framework]" value="{{ $frame->usableFramework->id }}" id="{{ $frame->usableFramework->framework }}">
+                {{ $frame->usableFramework->framework }}
+              </label>
             @endforeach
           @endforeach
         </div>
@@ -65,5 +74,9 @@
     <a href="{{ route('admin.postlist') }}">Back</a>
   </div>
 </article>
+
+@endsection
+
+@section('script')
 
 @endsection

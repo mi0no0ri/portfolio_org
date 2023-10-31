@@ -38,7 +38,7 @@
                 </div>
                 <div class="imageList">
                   @foreach($image->postdetails as $detail)
-                    <img src="{{ asset('storage/'.$detail->image) }}" alt="作品写真" class="workImage">
+                    <img src="{{ asset('storage/work/'.$detail->image) }}" alt="作品写真" class="workImage">
                   @endforeach
                 </div>
               </div>

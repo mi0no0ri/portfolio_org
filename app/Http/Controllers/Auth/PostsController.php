@@ -37,13 +37,12 @@ class PostsController extends Controller
                 foreach($postdetail as $key => $val){
                     $file_name = $val->getClientOriginalName();
                     $path = $val->storeAs('public/work', $file_name);
-                    $data = [
-                        'post_id' => $post->id,
+                    postdetails::create([
+                        'post_id' =>$post->id,
                         'image' => $file_name,
                         'created_at' => now(),
                         'updated_at' => now()
-                    ];
-                    $postdetail = postdetails::insert($data);
+                    ]);
                 }
             }
         }
@@ -51,13 +50,12 @@ class PostsController extends Controller
         if ($request->has('language')){
             foreach($request['language'] as $language){
                 foreach($language as $key => $val){
-                    $data = [
+                    Language::create([
                         'post_id' => $post->id,
                         'language_id' => $val,
                         'created_at'=> now(),
                         'updated_at' => now()
-                    ];
-                    $language = Language::insert($data);
+                    ]);
                 }
             }
         }
@@ -65,13 +63,12 @@ class PostsController extends Controller
         if ($request->has('framework')){
             foreach($request['framework'] as $framework){
                 foreach($framework as $key => $val){
-                    $data = [
+                    Frameworks::create([
                         'post_id' => $post->id,
                         'framework_id' => $val,
                         'created_at' => now(),
                         'updated_at' => now(),
-                    ];
-                    $framework = Frameworks::insert($data);
+                    ]);
                 }
             }
         }
@@ -92,25 +89,28 @@ class PostsController extends Controller
             ->first();
         $langs = UsableLanguages::orderBy('id', 'asc')
             ->get();
-        return view('auth/post/postEdit', compact('post', 'langs'));
+        $checkLang = Language::where('post_id', $id)
+            ->select('language_id')
+            ->get();
+        return view('auth/post/postEdit', compact('post', 'langs', 'checkLang'));
     }
     // 投稿更新
     public function postUpdate(Request $request, $id) {
         $post = Post::find($id);
-        $post->fill($request->except('postdetail', 'language', 'framework'))
+        $post->fill($request->except('image', 'language', 'framework'))
             ->save();
-        dd($request);
         // 画像更新
-        if($request->has('postdetail')) {
-            foreach($request['postdetail'] as $postdetail) {
+        if($request->has('image')) {
+            foreach($request['image'] as $postdetail) {
                 foreach($postdetail as $key => $val){
+                    $image = postdetails::where('id', $request->imageId[$key])->first();
                     $file_name = $val->getClientOriginalName();
                     $path = $val->storeAs('public/work', $file_name);
                     if($path){
-                        $data->post_id = $id;
-                        $data->image = $file_name;
-                        $data->updated_at = now();
-                        $data->save();
+                        $image->post_id = $id;
+                        $image->image = $file_name;
+                        $image->updated_at = now();
+                        $image->save();
                     }
                 }
             }
@@ -153,6 +153,6 @@ class PostsController extends Controller
         Language::where('post_id', $id)->delete();
         Frameworks::where('post_id', $id)->delete();
         Post::where('id', $id)->delete();
-        return view('auth/post/postList');
+        return redirect()->route('admin.postlist');
     }
 }

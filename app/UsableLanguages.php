@@ -18,7 +18,7 @@ class UsableLanguages extends Model
     }
     public function languages()
     {
-        return $this->hasMany('App\Language');
+        return $this->hasMany('App\Language', 'language_id', 'id');
     }
     public function lang_frames()
     {

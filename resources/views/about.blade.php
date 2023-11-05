@@ -7,7 +7,7 @@
   <div>
     <div class="aboutContents">
       <div class="myImage">
-        <img src="{{ asset('storage/'.$user->image) }}" alt="" class="aboutImage">
+        <img src="{{ asset('storage/about/'.$user->image) }}" alt="" class="aboutImage">
         <div class="aboutName">
           <h4>NAME：</h4>
           <p>minori</p>
@@ -58,7 +58,7 @@
       <div class="aboutLanguageList">
         <ul>
           @foreach($skills as $skill)
-            @for($i = 1; $i <= 8; $i++)
+            @for($i = 1; $i <= 5; $i++)
               @if($skill->language_id == $i)
               <div class="language language{{ $i }} hidden">
                 <li>{{ $skill->skill }}</li>
@@ -87,7 +87,7 @@
       <div class="aboutToolList">
         <ul>
           @foreach($tools as $tool)
-            @for($i = 1; $i <= 8; $i++)
+            @for($i = 1; $i <= 4; $i++)
               @if($tool->tool_id == $i)
               <div class="tool tool{{ $i }} hidden">
                 <li>{{ $tool->skill }}</li>

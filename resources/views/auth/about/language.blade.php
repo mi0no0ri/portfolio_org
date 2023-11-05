@@ -12,7 +12,7 @@
         {{ csrf_field() }}
         <div>
             <label for="language">使用言語登録</label>
-            <input type="text" name="language" id="language" class="useLanguageRegisterInput">
+            <input type="text" name="language" id="language" class="useLanguageRegisterInput" value={{ old('language') }}>
         </div>
         <div>
             <input type="submit" value="Register">
@@ -38,7 +38,7 @@
             <form action="{{ route('admin.addFramework', $lang->id) }}" method="post" class="addFrameworkInput hidden" id="addFrameworkWrap{{$index}}">
                 {{ csrf_field() }}
                 <input type="hidden" name="language_id" value="{{ $lang->id }}">
-                <input type="text" name="framework" class="addFramework">
+                <input type="text" name="framework" class="addFramework" value="{{ old('framework') }}">
                 <input type="submit" value="Add">
             </form>
             @foreach($lang->lang_frames as $framework)

@@ -17,11 +17,11 @@
         @endforeach
         <div class="adminPostList">
           <label for="title" class="adminPostItem">タイトル</label>
-          <input type="text" name="title" id="title">
+          <input type="text" name="title" id="title" value="{{ old('title') }}">
         </div>
         <div class="adminPostList">
           <label for="description" class="adminPostItem">説明</label>
-          <input type="textarea" name="description" id="description">
+          <input type="textarea" name="description" id="description" value="{{ old('description') }}">
         </div>
         <div class="adminPostList">
           <label for="image1" class="adminPostItem">イメージ画像1</label>
@@ -37,14 +37,14 @@
         </div>
         <div class="adminPostList">
           <label for="url" class="adminPostItem">URL</label>
-          <input type="text" name="url" id="url">
+          <input type="text" name="url" id="url" value="{{ old('url') }}">
         </div>
         <div  class="adminPostList">
           <label class="adminPostItem">使用言語</label>
           <div class="adminPostLang">
-            @foreach($languages as $index=>$language)
+            @foreach($languages as $index => $language)
               <label for="{{ $language->language }}">
-                <input type="checkbox" name="language[' {{ $index }} '][language]" value="{{ $language->id }}" id="{{ $language->language }}">
+                <input type="checkbox" name="language[' {{ $index }} '][language]" id="{{ $language->language }}" value="{{ $language->id }}">
                 {{ $language->language }}
               </label>
               @foreach($language->lang_frames as $frame)

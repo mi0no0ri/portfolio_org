@@ -57,15 +57,15 @@ $(function () {
   });
   $('.javascript').on('click', function () {
     $('.language').fadeOut(out).addClass('hidden');
-    $('.language3, .language4').fadeIn(sec);
+    $('.language3').fadeIn(sec);
   });
   $('.php').on('click', function () {
     $('.language').fadeOut(out).addClass('hidden');
-    $('.language5, .language6').fadeIn(sec);
+    $('.language4').fadeIn(sec);
   });
   $('.java').on('click', function () {
     $('.language').fadeOut(out).addClass('hidden');
-    $('.language7, .language8').fadeIn(sec);
+    $('.language5').fadeIn(sec);
   });
 });
 

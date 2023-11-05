@@ -15,6 +15,10 @@
       @foreach($image->language as $language)
         <small class="languageList">{{ $language->usableLanguage->language }}</small>
       @endforeach
+      <p class="languageTitle">使用フレームワーク</p>
+      @foreach($image->framework as $framework)
+        <small class="languageList">{{ $framework->usableFramework->framework }}</small>
+      @endforeach
       <div class="moreLink">
         <a href="{{ route('work.details', $image->id) }}">more...</a>
       </div>

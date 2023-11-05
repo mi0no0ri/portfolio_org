@@ -25,14 +25,18 @@
             <input type="textarea" name="introduce" id="introduce" value="{{ $user->introduce }}">
         </div>
         <div>
-            <label for="image">Top Image</label>
-            <img src="{{ asset('storage/'.$user->image) }}" alt="トップ写真" class="profileImage">
-            <input type="file" name="image" id="image">
+            <label for="userImage">Top Image
+                <img src="{{ asset('storage/about/'.$user->image) }}" alt="トップ写真" class="profileImage" id="profileImage">
+                <input type="file" name="image" id="userImage" class="inputHidden">ファイルを選択
+                <p id="imageTitle">{{ $user->image }}</p>
+            </label>
         </div>
         <div>
-            <label for="background">Background</label>
-            <img src="{{ asset('storage/'.$user->background) }}" alt="背景写真" class="profileBackground">
-            <input type="file" name="background" id="background">
+            <label for="userBackground">Background
+                <img src="{{ asset('storage/about/'.$user->background) }}" alt="背景写真" class="profileBackground" id="profileBackground">
+                <input type="file" name="background" id="userBackground" class="inputHidden">ファイルを選択
+                <p id="backTitle">{{ $user->background }}</p>
+            </label>
         </div>
         <div>
             <input type="submit" value="Register">
@@ -48,10 +52,27 @@
 @section('script')
 
 <script>
-    var image = {{ $user->image }};
-    var background = {{ $user->background }};
-    $('#image').val(image);
-    $('#background').val(background);
+// 画像選択表示切り替え
+$(function(){
+  $('#userImage').on('change', function(e){
+    var file = $(this).prop('files')[0];
+    $('#imageTitle').text(file.name);
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#profileImage').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+  $('#userBackground').on('change', function(e){
+    var file = $(this).prop('files')[0];
+    $('#backTitle').text(file.name);
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#profileBackground').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
 </script>
 
 @endsection

@@ -38,15 +38,18 @@ class UsersController extends Controller
         $user = User::find($request->id);
         $user->fill($request->except('image', 'background'))
             ->save();
-        if($request->file('image') != null){
+        if($request->has('image')){
             $img = $request->file('image');
-            $path = $img->store('about', 'public');
-            $user->image = $path;
+            $file_name = $img->getClientOriginalName();
+            $path = $img->storeAs('public/about', $file_name);
+            $user->image = $file_name;
             $user->save();
-        } else if ($request->file('background') != null) {
+        }
+        if ($request->has('background')) {
             $img = $request->file('background');
-            $path = $img->store('about', 'public');
-            $user->background = $path;
+            $file_name = $img->getClientOriginalName();
+            $path = $img->storeAs('public/about', $file_name);
+            $user->background = $file_name;
             $user->save();
         }
         return redirect()->route('admin.about');

@@ -3,12 +3,12 @@
 <article class="body">
   <div class="article">
     <div class="fadeInLeft">
-      <img src="<?php echo e(asset('storage/'.$user->background)); ?>" alt="背景" class="topPic">
+      <img src="<?php echo e(asset('storage/about/'.$user->background)); ?>" alt="背景" class="topPic">
     </div>
     <div class="introduce fadeIn">
       <h2>About</h2>
       <div class="introduceContents">
-        <img src="<?php echo e(asset('storage/'.$user->image)); ?>" alt="プロフィール写真" class="profileImage">
+        <img src="<?php echo e(asset('storage/about/'.$user->image)); ?>" alt="プロフィール写真" class="profileImage">
         <div class="introduceText">
           <p>NAME: <strong><?php echo e($user->name); ?></strong></p>
           <p><?php echo e($user->introduce); ?></p>

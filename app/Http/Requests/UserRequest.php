@@ -27,8 +27,8 @@ class UserRequest extends FormRequest
             'name' => 'required|string|max:15',
             'email' => 'required|email|string',
             'introduce' => 'required|string|max:255',
-            'image' => 'required|file|mimes:jpeg,jpg,png,',
-            'background' => 'required|file|mimes:jpeg,jpg,png',
+            'image' => 'file|mimes:jpeg,jpg,png,',
+            'background' => 'file|mimes:jpeg,jpg,png',
         ];
     }
 
@@ -44,10 +44,8 @@ class UserRequest extends FormRequest
             'introduce.required' => '自己紹介を入力してください。',
             'introduce.string' => '自己紹介は文字列で入力してください。',
             'introduce.max' => '自己紹介は255文字以内で入力してください。',
-            'image.required' => 'トップ画像を指定してください。',
             'image.file' => 'トップ画像はファイルで指定してくだいさい。',
             'image.mimes' => 'トップ画像はjpeg,jpg,pngで指定してくだいさい。',
-            'background.required' => '背景画像を指定してくだいさい。',
             'background.file' => '背景画像はファイルで指定してくだいさい。',
             'background.mimes' => '背景画像はjpeg,jpg,pngで指定してください。',
         ];

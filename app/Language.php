@@ -8,7 +8,7 @@ class Language extends Model
 {
     protected $fillable = [
         'post_id',
-        'language',
+        'language_id',
     ];
     public function post()
     {

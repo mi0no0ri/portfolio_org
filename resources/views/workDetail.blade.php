@@ -16,6 +16,12 @@
           <small class="languageList">{{ $language->usableLanguage->language }}</small>
         @endforeach
       </div>
+      <div>
+        <h4>使用フレームワーク</h4>
+        @foreach($detail->framework as $framework)
+          <small class="languageList">{{ $framework->usableFramework->framework }}</small>
+        @endforeach
+      </div>
       @if($detail->url != null)
       <div class="workUrl">
         <h4>URL</h4>

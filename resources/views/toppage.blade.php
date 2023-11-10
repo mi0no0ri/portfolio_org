@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
   <title>minori_portfolio</title>
@@ -46,7 +46,7 @@
   @yield('contents')
 
   <div class="toUp">
-    <a href="#" class="toUpLink"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="{{ route('top') }}" class="toUpLink"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
   <div class="snsIcon">
     <a href="{{ asset('https://www.instagram.com/minori_no_gallery/') }}"><i class="fa-brands fa-instagram"></i></a>
@@ -57,6 +57,6 @@
     <small>&copy;2023_minori</small>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/js/script.js"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

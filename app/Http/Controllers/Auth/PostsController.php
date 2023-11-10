@@ -120,13 +120,12 @@ class PostsController extends Controller
             Language::where('post_id', $id)->delete();
             foreach($request['language'] as $language) {
                 foreach($language as $key => $val) {
-                $data = [
-                    'post_id' => $post->id,
-                    'language_id' => $val,
-                    'created_at'=> now(),
-                    'updated_at' => now()
-                ];
-                $language = Language::insert($data);
+                    Language::create([
+                        'post_id' => $post->id,
+                        'language_id' => $val,
+                        'created_at'=> now(),
+                        'updated_at' => now()
+                    ]);
                 }
             }
         }
@@ -135,13 +134,12 @@ class PostsController extends Controller
             Frameworks::where('post_id', $id)->delete();
             foreach($request['framework'] as $framework){
                 foreach($framework as $key => $val){
-                    $data = [
+                    Frameworks::create([
                         'post_id' => $post->id,
                         'framework_id' => $val,
                         'created_at' => now(),
                         'updated_at' => now(),
-                    ];
-                    $framework = Frameworks::insert($data);
+                    ]);
                 }
             }
         }

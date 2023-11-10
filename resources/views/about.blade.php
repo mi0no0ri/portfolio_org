@@ -7,7 +7,7 @@
   <div>
     <div class="aboutContents">
       <div class="myImage">
-        <img src="{{ asset('storage/about/'.$user->image) }}" alt="" class="aboutImage">
+        <img src="{{ asset('storage/about/'.$user->image) }}" alt="イメージ写真" class="aboutImage">
         <div class="aboutName">
           <h4>NAME：</h4>
           <p>minori</p>

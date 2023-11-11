@@ -15,7 +15,7 @@ class Post extends Model
     ];
     public function postdetails()
     {
-        return $this->hasMany('App\Postdetails');
+        return $this->hasMany('App\postdetails');
     }
     public function functions()
     {

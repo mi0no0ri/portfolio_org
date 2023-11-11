@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<article class="workWrap work">
+<article class="workWrap work fadeIn">
   <h2>{{ $detail->title }}</h2>
   <div class="workDetailWrap">
     <div class="workDetailDescription">
@@ -45,5 +45,8 @@
     <a href="{{ route('work') }}">Back</a>
   </div>
 </article>
+<div class="toUp">
+  <a href="#" class="toUpLink"><i class="fa-solid fa-arrow-up"></i></a>
+</div>
 
 @endsection

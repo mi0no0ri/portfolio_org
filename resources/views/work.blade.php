@@ -29,5 +29,8 @@
     <a href="{{ route('top') }}">TOP</a>
   </div>
 </article>
+<div class="toUp">
+  <a href="#" class="toUpLink"><i class="fa-solid fa-arrow-up"></i></a>
+</div>
 
 @endsection

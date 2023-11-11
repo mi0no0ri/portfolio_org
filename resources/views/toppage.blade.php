@@ -45,9 +45,6 @@
 
   @yield('contents')
 
-  <div class="toUp">
-    <a href="{{ route('top') }}" class="toUpLink"><i class="fa-solid fa-arrow-up"></i></a>
-  </div>
   <div class="snsIcon">
     <a href="{{ asset('https://www.instagram.com/minori_no_gallery/') }}"><i class="fa-brands fa-instagram"></i></a>
     <a href="{{ asset('https://www.threads.net/@minori_no_gallery') }}"><i class="fa-brands fa-threads"></i></a>

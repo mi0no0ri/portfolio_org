@@ -29,7 +29,7 @@ Route::post('contact/create','ContactsController@create')->name('contact.create'
 Route::post('contact/confirm','ContactsController@confirm')->name('confirm');
 
 // ログイン
-Auth::routes();
+Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::name('admin.')
   ->middleware('auth')

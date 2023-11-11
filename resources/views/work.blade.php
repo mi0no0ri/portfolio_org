@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<article class="workWrap work">
+<article class="workWrap work fadeIn">
   <h2>Works</h2>
   <div class="worksList">
     @foreach($images as $index => $image)

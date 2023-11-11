@@ -364,6 +364,7 @@ workdetails
   width: 100%;
   height: auto;
   margin: 20px;
+  border: #000 .5px solid;
 }
 
 /*
@@ -673,6 +674,28 @@ mobile
   }
   .workContents {
     margin: auto 10px;
+  }
+  .workDetail {
+    margin: auto;
+  }
+  .workDetail h2 {
+    font-size: 30px;
+    margin: 0 5%;
+  }
+  .workDetailWrap {
+    flex-direction: column;
+  }
+  .workDetailDescription {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .workDetailImageWrap {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .workDetailImage {
+    width: 80%;
   }
   /*
   contact

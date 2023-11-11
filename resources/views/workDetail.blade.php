@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<article class="workWrap work fadeIn">
+<article class="workWrap work workDetail fadeIn">
   <h2>{{ $detail->title }}</h2>
   <div class="workDetailWrap">
     <div class="workDetailDescription">

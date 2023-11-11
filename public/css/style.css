@@ -173,10 +173,10 @@ about
 .aboutImage {
   height: 300px;
   width: 300px;
-  margin: 100px auto auto 100px;
+  margin: 100px auto auto auto;
 }
 .aboutName {
-  margin-left: 100px;
+  margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -542,7 +542,7 @@ mobile
     display: block;
     position: fixed;
     z-index: 3;
-    width: 50vw;
+    width: 50%;
     height: 350px;
     background-color: #fff;
     top: 0px;
@@ -614,6 +614,32 @@ mobile
   .introduceText {
     width: 70%;
     padding: 20px 0;
+  }
+  .mySkillMenu,
+  .myToolMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20%;
+  }
+  .mySkillMenu li,
+  .myToolMenu li {
+    border-left: none;
+    border-bottom: 1px solid #000;
+    line-height: 70px;
+    text-align: center;
+    padding: 0;
+  }
+  .aboutLanguageList,
+  .aboutToolList {
+    margin: 50px 25%;
+  }
+  .mySkill,
+  .myTool {
+    margin: 20px 40px;
+  }
+  .mySkillMenu,
+  .myToolMenu {
+    border-bottom: none;
   }
   /*
   work

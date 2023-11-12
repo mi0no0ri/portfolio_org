@@ -465,10 +465,10 @@ contact
   margin-top: 50px;
 }
 .submitBtn button {
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: #6b6b6b;
+  border: none!important;
+  padding: 10px 20px!important;
+  cursor: pointer!important;
+  color: #6b6b6b!important;
 }
 .submitBtnSpace {
   display: flex;

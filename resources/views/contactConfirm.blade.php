@@ -33,10 +33,10 @@
     </div>
     <div class="submitBtnSpace">
       <div class="submitBtn">
-        <button type="submit" name="back" value="back">Back</button>
+        <button type="submit" name="back" value="back" class="submitInputBtn">Back</button>
       </div>
       <div class="submitBtn">
-        <button type="submit">Send</button>
+        <button type="submit" class="submitInputBtn">Send</button>
       </div>
     </div>
   </form>

@@ -464,11 +464,11 @@ contact
   justify-content: center;
   margin-top: 50px;
 }
-.submitBtn button {
-  border: none!important;
-  padding: 10px 20px!important;
-  cursor: pointer!important;
-  color: #6b6b6b!important;
+.submitInputBtn {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #6b6b6b;
 }
 .submitBtnSpace {
   display: flex;

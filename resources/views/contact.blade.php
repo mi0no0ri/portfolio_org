@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="submitBtn">
-      <input type="submit" value="確認">
+      <button type="submit">Confirm</button>
     </div>
   </form>
   <div class="return">

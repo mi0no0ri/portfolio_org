@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="submitBtn">
-      <button type="submit">Confirm</button>
+      <button type="submit" class="submitInputBtn">Confirm</button>
     </div>
   </form>
   <div class="return">

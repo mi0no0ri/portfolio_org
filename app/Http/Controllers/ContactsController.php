@@ -29,6 +29,11 @@ class ContactsController extends Controller
         return redirect()->route('contact');
     }
     public function send(ContactRequest $request) {
+        if($request->input('back') == 'back'){
+            return redirect('contact')
+                ->withInput();
+        }
+
         $action = $request->input('action');
         $inputs = $request->except('action');
         $myEmail = 'minori.nishizawa.0314@gmail.com';

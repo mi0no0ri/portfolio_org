@@ -25,7 +25,7 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|max:50',
+            'email' => 'required|max:50|email',
             'title' => 'required|max:20',
             'contact' => 'required|max:255'
         ];
@@ -36,6 +36,7 @@ class ContactRequest extends FormRequest
             'name.required' => 'お名前は必須です。',
             'email.required' => 'メールアドレスは必須です。',
             'email.max' => '最大50文字までです。',
+            'email.email' => 'メールアドレスは有効なe-mailアドレスを入力してください。',
             'title.required' => 'タイトルは必須です。',
             'title.max' => '最大20文字です。',
             'contact.required' => 'お問い合わせ内容は必須です。',
